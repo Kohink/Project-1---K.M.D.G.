@@ -1,35 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View, ScrollView } from 'react-native';
+import tw from 'tailwind-rn';
 
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text style={styles.testText}> Hi Kohin </Text>
-//       <Text style={{margin: 10}}>Bye Kohin</Text>
-//       <Button title='Submit'/>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-
-//   testText:
-//   {
-//     margin: 15,
-//     borderWidth: 3, 
-//     borderColor: 'green',
-//     padding: 15
-//   }
-
-// });
 
 export default function App() {
 
