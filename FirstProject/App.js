@@ -1,80 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, View, ScrollView } from 'react-native';
-import tw from 'tailwind-rn';
+// In App.js in a new project
+
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import StackNavigator from './StackNavigator';
 
 
-export default function App() {
+const Stack = createNativeStackNavigator();
 
-  const [inputText, setText] = useState('');
-  const [courseGoal, setCourse] = useState([]);
-
-  function goalInput(inputText) {
-    setText(inputText);
-  
-  }
-
-  function addGoal() {
-    setCourse(currentCourse => [...currentCourse, inputText]);
-  }
-
-
+function App() {
   return (
-    <View style={styles.container}>
-          <View style={styles.inputContainer}>
-            <TextInput style={styles.textInput}  placeholder='Your course goal' onChangeText={goalInput}/>
-            <Button title='Add Goal' onPress={addGoal}/>
-    </View>
-    <View style={styles.goals}>
-    <ScrollView>
-           {courseGoal.map((goal)=> (
-           <View key={goal} style={styles.goalItem}>
-           <Text style={styles.goalText}>{goal}</Text>
-           </View>))}
-            </ScrollView>
-            </View>
-    </View>
+    <NavigationContainer>
+      <StackNavigator/>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: 
-  {
-    flex: 1,
-    paddingTop: 50,
-    paddingHorizontal: 16,
-  },
-  inputContainer:
-  {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center', 
-    marginBottom: 24,
-    borderBottomWidth: 1,
-    borderBottomColor: '#cccccc',
-  },
-  textInput:
-  {
-    borderWidth: 1,
-    borderColor: '#cccccc',
-    width: '70%',
-    marginRight: 8,
-    padding: 8 
-  },
-  goals:
-  {
-    flex: 5
-  },
-  goalItem: 
-  {
-    margin: 8,
-    borderRadius: 6,
-    backgroundColor: '#5e08cc',
-    padding: 8,
-  },
-  goalText:
-  {
-    color: 'white'
-  }
-});
+export default App;
