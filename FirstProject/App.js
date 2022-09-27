@@ -5,6 +5,7 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import StackNavigator from './StackNavigator';
+import { AuthProvider } from './hooks/useAuth';
 
 
 const Stack = createNativeStackNavigator();
@@ -12,7 +13,9 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
+      <AuthProvider>
       <StackNavigator/>
+      </AuthProvider>
     </NavigationContainer>
   );
 }
