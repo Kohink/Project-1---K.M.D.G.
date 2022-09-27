@@ -9,17 +9,22 @@ import useAuth from "./hooks/useAuth";
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
-    const {user} = useAuth();
+    //const { user } = useAuth();
     return (
         <Stack.Navigator>
-            {user ? (
+
+            {/*             Checks if user has value to go to home page or login page first
+            {/{user ? (
                 <>
                     <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
-                    <Stack.Screen name="Chat" component={ChatScreen}/>
+                    <Stack.Screen name="Chat" component={ChatScreen} options={{headerShown:false}}/>
                 </>
             ) : (
                 <Stack.Screen name="Login" component={LoginScreen} />
-            )}
+            )} } */}
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Chat" component={ChatScreen} />
         </Stack.Navigator>
     );
 };
